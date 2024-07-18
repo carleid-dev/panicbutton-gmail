@@ -1,0 +1,35 @@
+{
+  "timeZone": "America/New_York",
+  "dependencies": {},
+  "exceptionLogging": "STACKDRIVER",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/gmail.addons.execute",
+    "https://www.googleapis.com/auth/gmail.readonly",
+    "https://www.googleapis.com/auth/gmail.modify",
+    "https://www.googleapis.com/auth/script.locale",
+    "https://www.googleapis.com/auth/gmail.addons.current.message.readonly",
+    "https://www.googleapis.com/auth/gmail.addons.current.message.action",
+    "https://www.googleapis.com/auth/userinfo.email"
+  ],
+  "runtimeVersion": "V8",
+  "addOns": {
+    "common": {
+      "name": "Arcshields Panic Button",
+      "logoUrl": "https://www.freeiconspng.com/thumbs/alert-icon/alert-icon-red-11.png",
+      "layoutProperties": {
+        "primaryColor": "#000000",
+        "secondaryColor": "#5eafd1"
+      },
+      "useLocaleFromApp": true
+    },
+    "gmail": {
+      "contextualTriggers": [
+        {
+          "unconditional": {},
+          "onTriggerFunction": "getContextualAddOn"
+        }
+      ],
+      "authorizationCheckFunction": "getContextualAddOn"
+    }
+  }
+}
